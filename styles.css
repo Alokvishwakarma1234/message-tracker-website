@@ -535,3 +535,5 @@ h2{font-size:clamp(30px,3.6vw,46px);font-weight:800}
  .gflow{padding:16px 14px}
  .glite{font-size:14px}
 }
+
+.nbfield span .nbeg{display:inline-block;vertical-align:middle;margin-left:8px;font-style:normal;font-family:Poppins,sans-serif;font-size:11px;font-weight:600;letter-spacing:.3px;color:#8a5a00;background:#fff4d6;border:1px solid #f2d48a;border-radius:999px;padding:2px 9px;line-height:1.5}
