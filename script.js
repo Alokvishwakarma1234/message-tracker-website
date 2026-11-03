@@ -30,3 +30,10 @@ if(b)b.addEventListener('click',function(){var p=v.play();if(p&&p.catch)p.catch(
 v.addEventListener('play',function(){v.setAttribute('controls','');s.classList.add('playing');vids.forEach(function(o){if(o!==v&&!o.paused)o.pause()})});
 v.addEventListener('ended',function(){s.classList.remove('playing')})})
 })();
+
+/* guide: screen tabs */
+(function(){
+var tabs=[].slice.call(document.querySelectorAll('.gtab'));if(!tabs.length)return;
+function sel(t,focus){tabs.forEach(function(x){var on=x===t;x.classList.toggle('on',on);x.setAttribute('aria-selected',on?'true':'false');x.tabIndex=on?0:-1;var p=document.getElementById(x.getAttribute('aria-controls'));if(p){p.hidden=!on;if(on)p.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in')})}});if(focus)t.focus()}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){sel(t)});t.addEventListener('keydown',function(e){var n=null;if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];if(n){e.preventDefault();sel(n,true)}})});
+})();
